@@ -17,7 +17,7 @@ function fitWithinVal( array, num ){
         let currentNum = array[i];
         if(currentNum < num){
             if(outputSum + currentNum < num){
-                output.push(currentNum)
+                output.push(currentNum);
                 outputSum = sumArray(output);
             }
         }
@@ -25,10 +25,22 @@ function fitWithinVal( array, num ){
     return output;
 }
 
-function getAllNamesShorterThan(){
-
+function getAllNamesShorterThan( array, maxLen ){
+    const arrLen = array.length;
+    const output = [];
+    for(namei = 0; namei < arrLen; namei++){
+        if(array[namei].length < maxLen){
+            output.push(array[namei]);
+        }
+    }
+    return output;
 }
 
-function makeLabel(){
+function makeLabel( personObj ){
+     const {givenName:fName, familyName:lName, greeting:prefix, 'home address':address } = personObj;
+     let adressee = `${prefix} ${fName} ${lName}\n`;
+     let location = `${address.streetNumber} ${address.streetName}\n${address.city}, ${address.state} ${address.zip}`;
 
+     let message = adressee + location;
+     return message;
 }
