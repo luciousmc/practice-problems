@@ -6,8 +6,18 @@ function getPath(pathString){
     return output;
 }
 
-function getPathParts(){
+function getPathParts(url){
+    console.log(url);
+    const re = /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/
+    let result = re.exec(url);
+    console.log('the exect object is: ', result);
+    const parts = ['url', 'protocol', 'host', 'port', 'path', 'query', 'hash'];
 
+    const urlParts = {};
+
+    for (let i = 0; i < parts.length; i++){
+        
+    }
 }
 
 function getCapitalCount(){
