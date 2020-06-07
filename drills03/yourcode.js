@@ -39,6 +39,17 @@ function correctCalcChecker(){
 
 }
 
-function doMath(){
-
+function doMath(num1, num2, op){
+    switch(op) {
+        case '+':
+            return num1 + num2;
+        case '-':
+            return num1 - num2;
+        case '/':
+            return num1 / num2;
+        case 'x':
+            return num1 * num2;
+        default:
+            return null;
+    }
 }
