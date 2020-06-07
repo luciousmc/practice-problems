@@ -35,8 +35,16 @@ function getCapitalCount(stringArray){
     return capCount;
 }
 
-function correctCalcChecker(){
+function correctCalcChecker(array){
+    const output = [];
 
+    array.forEach(({ num1, num2, op, result }, index) => {
+        if(result === doMath(num1, num2, op)) {
+            output.push(array[index])
+        }
+    })
+
+    return output;
 }
 
 function doMath(num1, num2, op){
