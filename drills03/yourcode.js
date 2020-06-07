@@ -22,8 +22,17 @@ function getPathParts(url){
     return urlParts;
 }
 
-function getCapitalCount(){
+function getCapitalCount(stringArray){
+    let capCount = 0;
 
+    stringArray.forEach(word => {
+        if(isNaN(word[0])) {
+            if(word[0] == word[0].toUpperCase()) {
+                capCount++
+            }
+        }
+    })
+    return capCount;
 }
 
 function correctCalcChecker(){
