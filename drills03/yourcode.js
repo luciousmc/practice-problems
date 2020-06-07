@@ -10,8 +10,6 @@ function getPathParts(url){
     console.log(url);
     const re = /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/
     let result = re.exec(url);
-    console.log('match is: ', url.match(re))
-    console.log('the exect object is: ', result);
     const parts = ['url', 'protocol', 'host', 'port', 'path', 'query', 'hash'];
 
     const urlParts = {};
