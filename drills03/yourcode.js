@@ -8,15 +8,18 @@ function getPath(pathString){
 
 function getPathParts(url){
     console.log(url);
-    const re = /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/
-    let result = re.exec(url);
-    const parts = ['url', 'protocol', 'host', 'port', 'path', 'query', 'hash'];
+    const re = /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*)\/([a-zA-Z0-9\-.]+))?(?:\?([^#]*))?(?:#(.*))?$/
+    const [ str, protocol, dash, host, port, path, file ] = re.exec(url);
 
-    const urlParts = {};
+    const urlParts = {
+        protocol,
+        host,
+        port: parseInt(port),
+        path,
+        file
+    };
 
-    for (let i = 0; i < parts.length; i++){
-        
-    }
+    return urlParts;
 }
 
 function getCapitalCount(){
