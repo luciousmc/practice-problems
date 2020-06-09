@@ -1,9 +1,10 @@
 
 
 function changeElements(){
-    // let elements = document.getElementsByClassName('numConvert');
-    let elements = $('.numConvert, .otherConvert');
-    console.log(elements);
+    // let elements = document.getElementsByClassName('numConvert, .otherConvert');
+    let elements2 = document.querySelectorAll('.numConvert, .otherConvert')
+    console.log('the element: ', elements2)
+    // let elements = $('.numConvert, .otherConvert');
     const key = {
         one: 1,
         two: 2,
@@ -23,6 +24,7 @@ function changeElements(){
 
         $element.text(key[text])
     })
+
 }
 
 function appendTextToElement(){
