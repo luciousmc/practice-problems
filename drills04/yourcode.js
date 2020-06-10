@@ -2,7 +2,7 @@
 
 function changeElements(){
     let elements = $('.numConvert, .otherConvert');
-    
+
     const key = {
         one: 1,
         two: 2,
@@ -25,8 +25,10 @@ function changeElements(){
 
 }
 
-function appendTextToElement() {
+function appendTextToElement(className, text) {
+    const element = $(className);
 
+    element.append(text);
 }
 
 function addClass(){
