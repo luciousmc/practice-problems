@@ -1,10 +1,8 @@
 
 
 function changeElements(){
-    // let elements = document.getElementsByClassName('numConvert, .otherConvert');
-    let elements2 = document.querySelectorAll('.numConvert, .otherConvert')
-    console.log('the element: ', elements2)
-    // let elements = $('.numConvert, .otherConvert');
+    let elements = $('.numConvert, .otherConvert');
+    
     const key = {
         one: 1,
         two: 2,
@@ -16,18 +14,18 @@ function changeElements(){
         eight: 8,
         nine: 9,
         zero: 0
-    }
+    };
 
     $.each(elements, (index, element) => {
         $element = $(element);
         const text = $element.text();
 
         $element.text(key[text])
-    })
+    });
 
 }
 
-function appendTextToElement(){
+function appendTextToElement() {
 
 }
 
